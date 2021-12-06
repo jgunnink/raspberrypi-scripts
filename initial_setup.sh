@@ -1,5 +1,7 @@
 PIHOLE_DIR=/etc/pihole
 VPN_HOST=example.duckdns.org
+PI_IP_ADDRESS=10.0.1.254/32
+PI_IP_GATEWAY=10.0.1.1
 
 mkdir -p $PIHOLE_DIR
 
@@ -8,7 +10,7 @@ cat <<EOF > $PIHOLE_DIR"/setupVars.conf"
 WEBPASSWORD=b9c950640e1b3740e98acb93e669c65766f6670dd1609ba91ff41052ba48c6f3
 BLOCKING_ENABLED=true
 PIHOLE_INTERFACE=eth0
-IPV4_ADDRESS=10.0.1.254/32
+IPV4_ADDRESS=$PI_IP_ADDRESS
 IPV6_ADDRESS=
 QUERY_LOGGING=true
 INSTALL_WEB_SERVER=true
@@ -40,8 +42,8 @@ PLAT=Raspbian
 OSCN=bullseye
 USING_UFW=0
 IPv4dev=eth0
-IPv4addr=10.0.1.254/32
-IPv4gw=10.0.1.1
+IPv4addr=$PI_IP_ADDRESS
+IPv4gw=$PI_IP_GATEWAY
 install_user=pi
 install_home=/home/pi
 VPN=wireguard
